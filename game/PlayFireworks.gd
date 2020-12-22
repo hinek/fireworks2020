@@ -1,24 +1,14 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Explosion.one_shot = true
-	$Explosion.emitting = false
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	pass
 
 
 func _on_Timer_timeout():
-	$Explosion.emitting = false
-	$Explosion.position = Vector2(rand_range(50, 1150), rand_range(50, 300))
-	$Explosion.emitting = true
+	var newRocket = load("res://fireworks/Rocket.tscn").instance()
+	newRocket.position = Vector2(rand_range(180, 1100), 720)
+	newRocket.rotation_degrees = rand_range(-5, 5)
+	newRocket.linear_velocity = Vector2(0, rand_range(-350, -400))
+	add_child(newRocket)
+	pass

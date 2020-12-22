@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fireworks/Fountain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayFireworks.gd" type="Script" id=2]
-[ext_resource path="res://fireworks/Explosion.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -14,20 +12,15 @@ glow_levels/6 = true
 glow_levels/7 = true
 glow_intensity = 1.5
 glow_strength = 1.5
-glow_bloom = 0.01
+glow_bloom = 0.02
 glow_blend_mode = 0
 glow_hdr_threshold = 0.8
 
 [node name="PlayFireworks" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Fountain" parent="." instance=ExtResource( 1 )]
-position = Vector2( 720, 720 )
-
-[node name="Explosion" parent="." instance=ExtResource( 3 )]
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
