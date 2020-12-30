@@ -3,6 +3,7 @@ extends RigidBody2D
 
 func _ready():
 	linear_velocity = Vector2(0, linear_velocity.y).rotated(rotation)
+	$AudioStreamPlayer.play()
 
 
 func _process(delta):

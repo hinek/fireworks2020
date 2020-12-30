@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fireworks/Explosion.gd" type="Script" id=1]
 [ext_resource path="res://colors/0.tres" type="Gradient" id=2]
+[ext_resource path="res://sfx/firework_explosion_002.wav" type="AudioStream" id=3]
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,3 +24,7 @@ hue_variation_random = 0.5
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 0.5

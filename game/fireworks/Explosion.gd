@@ -10,6 +10,7 @@ func _ready():
 	particles.color_ramp = load(str("res://colors/" + str(color) + ".tres"))
 	particles.hue_variation = 0.3
 	particles.hue_variation_random = 0.5
+	$AudioStreamPlayer.play()
 
 
 func _process(delta):

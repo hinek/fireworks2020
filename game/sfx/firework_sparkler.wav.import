@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/firework_sparkler.wav-bd333bac5b3c11352b9c31d40e120703.sample"
+
+[deps]
+
+source_file="res://sfx/firework_sparkler.wav"
+dest_files=[ "res://.import/firework_sparkler.wav-bd333bac5b3c11352b9c31d40e120703.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0
