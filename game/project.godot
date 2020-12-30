@@ -16,13 +16,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Fireworks2020"
-run/main_scene="res://PlayFireworks.tscn"
+run/main_scene="res://SetupScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Settings="*res://Settings.gd"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

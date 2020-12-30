@@ -1,33 +1,30 @@
 extends Node2D
 
 
-var random_mode = false
-var orchestration_string = """fountain 0.2
-fountain 0.8
-wait 1000
-rocket 0.4
-wait 100
-rocket 0.5
-wait 100
-rocket 0.6"""
-
+var random_mode = true
 var orchestration_array = []
 var orchestration_index = 0
 var split_instruction = RegEx.new()
 
 
 onready var timer = $Timer
-onready var screen_width = get_viewport().size.x
-onready var screen_height = get_viewport().size.y
+onready var screen_width = 1280 #get_viewport().size.x
+onready var screen_height = 720 #get_viewport().size.y
 
 
 func _ready():
+	random_mode = Settings.random_mode
 	if random_mode:
 		continue_random()
 	else:
 		split_instruction.compile("(\\w+)( ([^\\s]+))+")
-		orchestration_array = orchestration_string.split("\n")
+		orchestration_array = Settings.current_show.split("\n")
 		continue_orchestration()
+
+
+func _input(event):
+	if event.is_action_released("ui_cancel"):
+		get_tree().change_scene("res://SetupScreen.tscn")
 
 
 func _on_Timer_timeout():
@@ -64,6 +61,9 @@ func continue_orchestration():
 
 func execute_instruction(instruction):
 	var result = split_instruction.search(instruction)
+	if result == null || result.get_group_count() < 2 || instruction.begins_with("#"):
+		continue_orchestration()
+		return
 	var command = result.strings[1].to_lower()
 	
 	if command == "fountain":
