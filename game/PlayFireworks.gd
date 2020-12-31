@@ -64,7 +64,7 @@ func execute_instruction(instruction):
 	
 	if command == "fountain" || command == "rocket":
 		var x = float(result[1])
-		var newFirework = load("res://fireworks/" + command + ".tscn").instance()
+		var newFirework = load("res://fireworks/" + command.capitalize() + ".tscn").instance()
 		newFirework.position = Vector2(screen_width * x, screen_height)
 		for i in range(2, result.size()):
 			var set = result[i].split(":")
