@@ -29,42 +29,38 @@ func _on_LoadShow_pressed(show_number):
 
 func _on_LoadDemo_pressed():
 	$TextEdit.text = """# use this to prepare your personal fireworks
-# 1. a line starting with a # is a comment and is ignored
-# 2. a line starting with \"rocket\" is a rocket launched add the position where it should
-#     be launched after it, 0.0 is left border, 1.0 is right border, 0.5 is middle, etc.
-# 3. a line starting with \"fountain\" is a sparkling fountain, followed by position (see 2)
-# 4. a line starting with \"wait\" will wait for the given amount of time (in milliseconds)
+# see instructions at the right side
 
 # let's start simple
-fountain 0.2
-fountain 0.8
+fountain 0.2 color:1 size:1.0
+fountain 0.8 color:1 size:1.0
 wait 1000
-rocket 0.5
+rocket 0.5 arandom:0
 wait 500
-rocket 0.6
+rocket 0.6 arandom:0 angle:1.0
 wait 500
-rocket 0.4
+rocket 0.4 arandom:0 angle:-1.0
 wait 2000
-rocket 0.1
-rocket 0.9
+rocket 0.1 color:0
+rocket 0.9 color:0
 wait 3000
 
 # now more rockets
-rocket 0.5
+rocket 0.5 color:3
 wait 500
-rocket 0.45
+rocket 0.45 color:3
 wait 500
-rocket 0.55
+rocket 0.55 color:3
 wait 500
-fountain 0.1
+fountain 0.1 color:0
 wait 500
-fountain 0.3
+fountain 0.3 color:2
 wait 500
-fountain 0.5
+fountain 0.5 color:3
 wait 500
-fountain 0.7
+fountain 0.7 color:4
 wait 500
-fountain 0.9
+fountain 0.9 color:5
 wait 500
 
 # rockets at the sides
@@ -149,40 +145,40 @@ rocket 0.1
 wait 3000
 
 # more fountains
-fountain 0.1
-fountain 0.9
+fountain 0.1 color:0
+fountain 0.9 color:0
 wait 800
-fountain 0.2
-fountain 0.8
+fountain 0.2 color:1
+fountain 0.8 color:1
 wait 800
-fountain 0.3
-fountain 0.7
+fountain 0.3 color:2
+fountain 0.7 color:2
 wait 800
-fountain 0.4
-fountain 0.6
+fountain 0.4 color:3
+fountain 0.6 color:3
 wait 800
-fountain 0.5
-fountain 0.5
+fountain 0.5 color:4
+fountain 0.5 color:4
 rocket 0.15
 rocket 0.85
 wait 800
-fountain 0.6
-fountain 0.4
+fountain 0.6 color:1
+fountain 0.4 color:1
 rocket 0.25
 rocket 0.75
 wait 800
-fountain 0.7
-fountain 0.3
+fountain 0.7 color:2
+fountain 0.3 color:2
 rocket 0.35
 rocket 0.65
 wait 800
-fountain 0.8
-fountain 0.2
+fountain 0.8 color:3
+fountain 0.2 color:3
 rocket 0.45
 rocket 0.55
 wait 800
-fountain 0.9
-fountain 0.1
+fountain 0.9 color:4
+fountain 0.1 color:4
 wait 3000
 
 # rockets inwards

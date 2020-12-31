@@ -116,6 +116,38 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 620.0
+margin_top = 300.0
+margin_right = 1279.0
+margin_bottom = 710.0
+text = "How to script your fireworks:
+
+A line starting with # is a comment, use these for yourself, they will be ignored.
+
+wait time
+  Waits for the given amount of milliseconds.
+  example:
+    wait 3000 --> waits for 3 seconds
+
+fountain position [color:0-5] [lifetime:1-86400] [size:0.35-1.0]
+  Creates a fountain at the given position (0.0 is left, 1.0 is right, 0.5 is middle, etc.). You can add
+  optional parameters to change color, lifetime or size.
+  examples:
+    fountain 0.5 --> default fountain with random color in the middle
+    fountain 0.25 color:0 size:1.0 --> extra large red fountain 1/4 to the left
+
+rocket position [angle:-1.0-1.0] [arandom:0.0-1.0] [height:0.0-1.0] [hrandom:0.0-1.0]
+                         [effect:name] [color:0-5]
+  Creates a rocket at the given position. You can add optional parameters to change angle, height,
+  randomness, effect type and effect color.
+  examples:
+    rocket 0.5 arandom:0 --> default rocket with random color in the middle going straight up
+    rocket 0.5 angle:-1.0 arandom:1.0 --> rocket flies diagonal to the left with maximum random in angle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="StartOrchestrated" to="." method="_on_StartOrchestrated_pressed"]
 [connection signal="pressed" from="StartRandom" to="." method="_on_StartRandom_pressed"]
 [connection signal="pressed" from="SaveShow1" to="." method="_on_SaveShow_pressed" binds= [ 1 ]]

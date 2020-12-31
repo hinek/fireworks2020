@@ -16,6 +16,8 @@ initial_velocity = 200.0
 scale_amount = 3.0
 scale_amount_random = 1.0
 color_ramp = ExtResource( 2 )
+hue_variation = 0.15
+hue_variation_random = 0.5
 __meta__ = {
 "_editor_description_": ""
 }
