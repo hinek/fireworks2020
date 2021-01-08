@@ -9,6 +9,7 @@ export var height_random_percent = 0.5     # 0.0 = no random / 1.0 = max random
 
 export var effect_name = "Explosion2"
 export var effect_color_set = -1           # -1 == random
+export var effect_lifetime_seconds = 2     # 0.5 .. 5.0
 
 
 func set_attribute(name, value):
@@ -24,6 +25,8 @@ func set_attribute(name, value):
 		effect_name = value
 	elif name == "color":
 		effect_color_set = clamp(int(value), 0, 5)
+	elif name == "lifetime":
+		effect_lifetime_seconds = clamp(float(value), 0.5, 5.0)
 
 
 func _ready():
@@ -38,6 +41,9 @@ func _process(delta):
 	if linear_velocity.y > -100:
 		var effect = load("res://fireworks/" + effect_name + ".tscn").instance()
 		effect.position = position
-		effect.color_set = effect_color_set
+		if "color_set" in effect:
+			effect.color_set = effect_color_set
+		if "lifetime_seconds" in effect:
+			effect.lifetime_seconds = effect_lifetime_seconds
 		get_parent().add_child(effect)
 		queue_free()
