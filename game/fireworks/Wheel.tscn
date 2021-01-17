@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://colors/0.tres" type="Gradient" id=1]
+[ext_resource path="res://fireworks/Wheel.gd" type="Script" id=2]
+
+[node name="Wheel" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Booster0" type="CPUParticles2D" parent="."]
+position = Vector2( 50, 0 )
+amount = 300
+lifetime = 0.5
+local_coords = false
+direction = Vector2( 0, 1 )
+spread = 3.0
+initial_velocity = 200.0
+scale_amount = 3.0
+scale_amount_random = 1.0
+color_ramp = ExtResource( 1 )
+hue_variation = 0.15
+hue_variation_random = 0.5
+__meta__ = {
+"_editor_description_": ""
+}

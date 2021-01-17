@@ -91,7 +91,7 @@ func execute_instruction(instruction):
 		return
 	var command = result[0].to_lower()
 	
-	if command == "fountain" || command == "rocket" || command == "flare":
+	if command == "fountain" || command == "rocket" || command == "flare" || command == "wheel":
 		var x = float(result[1])
 		var newFirework = load("res://fireworks/" + command.capitalize() + ".tscn").instance()
 		newFirework.position = Vector2(screen_width * x, screen_height)
