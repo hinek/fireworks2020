@@ -6,7 +6,7 @@ export var lifetime_seconds = 2
 
 
 var second_stage_type = load("res://fireworks/ClusterSecondStage.tscn")
-var explosion_type = load("res://fireworks/Explosion2.tscn")
+var explosion_type = load("res://fireworks/Explosion.tscn")
 var initial_child_count = 0
 
 

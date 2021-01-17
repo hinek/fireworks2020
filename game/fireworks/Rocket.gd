@@ -7,7 +7,7 @@ export var angle_random_percent = 0.5      # 0.0 = no random / 1.0 = max random
 export var height_modifier_percent = 0.8   # 0.0 = min height / 1.0 = max height
 export var height_random_percent = 0.5     # 0.0 = no random / 1.0 = max random
 
-export var effect_name = "Explosion2"
+export var effect_name = "explosion"
 export var effect_color_set = -1           # -1 == random
 export var effect_lifetime_seconds = 2     # 0.5 .. 5.0
 
@@ -39,7 +39,7 @@ func _ready():
 
 func _process(delta):
 	if linear_velocity.y > -100:
-		var effect = load("res://fireworks/" + effect_name + ".tscn").instance()
+		var effect = load("res://fireworks/" + effect_name.capitalize() + ".tscn").instance()
 		effect.position = position
 		if "color_set" in effect:
 			effect.color_set = effect_color_set

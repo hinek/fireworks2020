@@ -134,7 +134,7 @@ fountain position [color:0-5] [lifetime:1-86400] [size:0.35-1.0]
     fountain 0.25 color:0 size:1.0 --> extra large red fountain 1/4 to the left
 
 rocket position [angle:-1.0-1.0] [arandom:0.0-1.0] [height:0.0-1.0] [hrandom:0.0-1.0]
-                         [effect:explosion|explosion2|cluster|glitter] [color:0-5]
+                         [effect:explosion|cluster|glitter] [color:0-5]
     rocket 0.5 arandom:0 --> default rocket with random color in the middle going straight up
     rocket 0.5 angle:-1.0 arandom:1.0 --> rocket flies diagonal to the left with maximum random in angle
 
