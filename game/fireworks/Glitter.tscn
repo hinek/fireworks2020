@@ -10,6 +10,7 @@
 script = ExtResource( 3 )
 
 [node name="ParticlesExplosion" type="CPUParticles2D" parent="."]
+visible = false
 amount = 300
 lifetime = 0.8
 speed_scale = 1.8
@@ -28,20 +29,22 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="ParticlesShower" type="CPUParticles2D" parent="."]
-position = Vector2( 0, 50 )
-amount = 400
+[node name="ParticlesShower0" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 200
 lifetime = 4.0
-explosiveness = 0.7
+explosiveness = 0.99
 emission_shape = 1
-emission_sphere_radius = 128.0
-direction = Vector2( 0, 1 )
-spread = 0.0
+emission_sphere_radius = 16.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+initial_velocity = 100.0
+initial_velocity_random = 0.9
 scale_amount = 3.0
 scale_amount_random = 1.0
 color_ramp = ExtResource( 2 )
 hue_variation = 0.15
-hue_variation_random = 0.5
+hue_variation_random = 0.9
 hue_variation_curve = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": ""
@@ -51,3 +54,8 @@ __meta__ = {
 stream = ExtResource( 5 )
 volume_db = -5.0
 pitch_scale = 1.4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
