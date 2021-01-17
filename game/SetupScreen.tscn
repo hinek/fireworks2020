@@ -126,25 +126,24 @@ text = "How to script your fireworks:
 
 A line starting with # is a comment, use these for yourself, they will be ignored.
 
-wait time
-  Waits for the given amount of milliseconds.
-  example:
+wait milliseconds
     wait 3000 --> waits for 3 seconds
 
 fountain position [color:0-5] [lifetime:1-86400] [size:0.35-1.0]
-  Creates a fountain at the given position (0.0 is left, 1.0 is right, 0.5 is middle, etc.). You can add
-  optional parameters to change color, lifetime or size.
-  examples:
     fountain 0.5 --> default fountain with random color in the middle
     fountain 0.25 color:0 size:1.0 --> extra large red fountain 1/4 to the left
 
 rocket position [angle:-1.0-1.0] [arandom:0.0-1.0] [height:0.0-1.0] [hrandom:0.0-1.0]
-                         [effect:name] [color:0-5]
-  Creates a rocket at the given position. You can add optional parameters to change angle, height,
-  randomness, effect type and effect color.
-  examples:
+                         [effect:explosion|explosion2|cluster|glitter] [color:0-5]
     rocket 0.5 arandom:0 --> default rocket with random color in the middle going straight up
-    rocket 0.5 angle:-1.0 arandom:1.0 --> rocket flies diagonal to the left with maximum random in angle"
+    rocket 0.5 angle:-1.0 arandom:1.0 --> rocket flies diagonal to the left with maximum random in angle
+
+flare position [color:0-5] [lifetime:1-86400] [size:0.35-1.0]
+    flare 0.5 lifetime:10 size:1.0 --> shoots balls from the middle into maximum height for 10 seconds
+
+wheel position [height:0.0-1.0] [color:0-5] [count:2-10] [lifetime:1-86400] [size:0.2-1.0]
+    wheel 0.5 color:0 count:5 --> a normal sized wheel with 5 boosters spins in the middle of the screen
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }

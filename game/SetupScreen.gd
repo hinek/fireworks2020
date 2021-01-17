@@ -85,6 +85,12 @@ rocket 0.4
 rocket 0.6
 wait 3000
 
+# flares
+flare 0.2 lifetime:7
+flare 0.4 lifetime:7
+flare 0.6 lifetime:7
+flare 0.8 lifetime:7
+
 # rocket zig zag
 rocket 0.2
 wait 300
@@ -108,12 +114,20 @@ rocket 0.8
 wait 3000
 
 # big bang
-rocket 0.5
+rocket 0.5 effect:cluster
+wait 3000
+rocket 0.5 effect:glitter
 wait 100
-rocket 0.5
+rocket 0.75 effect:glitter
 wait 100
-rocket 0.5
-wait 5000
+rocket 0.25 effect:glitter
+wait 7000
+
+# wheels
+wheel 0.2 height:0.25 size:0.4 count:3 color:5
+wheel 0.4 height:0.25 size:0.6 count:5 color:4
+wheel 0.6 height:0.25 size:0.6 count:5 color:2
+wheel 0.8 height:0.25 size:0.4 count:3 color:0
 
 # surprise double zig zag
 rocket 0.1
