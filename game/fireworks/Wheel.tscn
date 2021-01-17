@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://colors/0.tres" type="Gradient" id=1]
 [ext_resource path="res://fireworks/Wheel.gd" type="Script" id=2]
+[ext_resource path="res://sfx/firework_sparkler.wav" type="AudioStream" id=3]
 
 [node name="Wheel" type="Node2D"]
 script = ExtResource( 2 )
@@ -22,3 +23,11 @@ hue_variation_random = 0.5
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

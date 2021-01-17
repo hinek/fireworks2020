@@ -1,7 +1,7 @@
 extends Node2D
 
 
-export var color_set = -1 # -1 == random
+export var color_set = -1         # -1 == random
 export var lifetime_seconds = 2
 
 
