@@ -31,7 +31,9 @@ func set_attribute(name, value):
 
 
 func _ready():
-	position.y = get_parent().screen_height * height
+	position.y = get_parent().screen_height * (1 - height)
+	var color_number = color_set if (color_set >= 0 && color_set < 6) else randi() % 6
+	$Booster0.color_ramp = load(str("res://colors/" + str(color_number) + ".tres"))
 	for i in range(1, booster_count):
 		var booster = $Booster0.duplicate()
 		booster.name = "Booster%d" % i
