@@ -4,13 +4,13 @@ extends Node2D
 const OVERLAPPING_SHOWERS = 4
 
 
-export var color_set = -1 # -1 == random
+@export var color_set = -1 # -1 == random
 
 
 var last_particles = null
 
 
-onready var color_number = color_set if (color_set >= 0 && color_set < 6) else randi() % 6
+@onready var color_number = color_set if (color_set >= 0 && color_set < 6) else randi() % 6
 
 
 func _ready():

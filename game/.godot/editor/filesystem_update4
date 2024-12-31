@@ -1,0 +1,6 @@
+res://default_env.tres
+res://SetupScreen.tscn
+res://Settings.gd
+res://fireworks/Fountain.gd
+res://fireworks/Fountain.tscn
+res://fireworks/Flare.gd

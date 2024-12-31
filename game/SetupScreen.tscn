@@ -1,127 +1,108 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://n1sneufbomae"]
 
-[ext_resource path="res://SetupScreen.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://SetupScreen.gd" id="1"]
 
 [node name="SetupScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 610.0
-margin_bottom = 710.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 610.0
+offset_bottom = 710.0
 
 [node name="StartOrchestrated" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 10.0
-margin_right = 820.0
-margin_bottom = 40.0
+layout_mode = 0
+offset_left = 620.0
+offset_top = 10.0
+offset_right = 820.0
+offset_bottom = 40.0
 text = "<-- Start this show"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StartRandom" type="Button" parent="."]
-margin_left = 830.0
-margin_top = 10.0
-margin_right = 1030.0
-margin_bottom = 40.0
+layout_mode = 0
+offset_left = 830.0
+offset_top = 10.0
+offset_right = 1030.0
+offset_bottom = 40.0
 text = "Start random show"
 
 [node name="SaveShow1" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 100.0
-margin_right = 820.0
-margin_bottom = 130.0
+layout_mode = 0
+offset_left = 620.0
+offset_top = 100.0
+offset_right = 820.0
+offset_bottom = 130.0
 text = "Save as show 1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LoadShow1" type="Button" parent="."]
-margin_left = 830.0
-margin_top = 100.0
-margin_right = 1030.0
-margin_bottom = 130.0
+layout_mode = 0
+offset_left = 830.0
+offset_top = 100.0
+offset_right = 1030.0
+offset_bottom = 130.0
 text = "Load from show 1"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SaveShow2" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 140.0
-margin_right = 820.0
-margin_bottom = 170.0
+layout_mode = 0
+offset_left = 620.0
+offset_top = 140.0
+offset_right = 820.0
+offset_bottom = 170.0
 text = "Save as show 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LoadShow2" type="Button" parent="."]
-margin_left = 830.0
-margin_top = 140.0
-margin_right = 1030.0
-margin_bottom = 170.0
+layout_mode = 0
+offset_left = 830.0
+offset_top = 140.0
+offset_right = 1030.0
+offset_bottom = 170.0
 text = "Load from show 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SaveShow3" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 180.0
-margin_right = 820.0
-margin_bottom = 210.0
+layout_mode = 0
+offset_left = 620.0
+offset_top = 180.0
+offset_right = 820.0
+offset_bottom = 210.0
 text = "Save as show 3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LoadShow3" type="Button" parent="."]
-margin_left = 830.0
-margin_top = 180.0
-margin_right = 1030.0
-margin_bottom = 210.0
+layout_mode = 0
+offset_left = 830.0
+offset_top = 180.0
+offset_right = 1030.0
+offset_bottom = 210.0
 text = "Load from show 3"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LoadDemo" type="Button" parent="."]
-margin_left = 830.0
-margin_top = 220.0
-margin_right = 1030.0
-margin_bottom = 250.0
+layout_mode = 0
+offset_left = 830.0
+offset_top = 220.0
+offset_right = 1030.0
+offset_bottom = 250.0
 text = "Load demo show"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="EscToReturn" type="Label" parent="."]
-margin_left = 1050.0
-margin_top = 10.0
-margin_right = 1271.0
-margin_bottom = 40.0
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 10.0
+offset_right = 1271.0
+offset_bottom = 40.0
 text = "(press ESC to return to this screen)"
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+vertical_alignment = 1
 
 [node name="Instructions" type="Label" parent="."]
-margin_left = 620.0
-margin_top = 300.0
-margin_right = 1279.0
-margin_bottom = 710.0
+layout_mode = 0
+offset_left = 620.0
+offset_top = 300.0
+offset_right = 1279.0
+offset_bottom = 710.0
 text = "How to script your fireworks:
 
 A line starting with # is a comment, use these for yourself, they will be ignored.
@@ -144,15 +125,13 @@ flare position [color:0-5] [lifetime:1-86400] [size:0.35-1.0]
 wheel position [height:0.0-1.0] [color:0-5] [count:2-10] [lifetime:1-86400] [size:0.2-1.0]
     wheel 0.5 color:0 count:5 --> a normal sized wheel with 5 boosters spins in the middle of the screen
 "
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
 [connection signal="pressed" from="StartOrchestrated" to="." method="_on_StartOrchestrated_pressed"]
 [connection signal="pressed" from="StartRandom" to="." method="_on_StartRandom_pressed"]
-[connection signal="pressed" from="SaveShow1" to="." method="_on_SaveShow_pressed" binds= [ 1 ]]
-[connection signal="pressed" from="LoadShow1" to="." method="_on_LoadShow_pressed" binds= [ 1 ]]
-[connection signal="pressed" from="SaveShow2" to="." method="_on_SaveShow_pressed" binds= [ 2 ]]
-[connection signal="pressed" from="LoadShow2" to="." method="_on_LoadShow_pressed" binds= [ 2 ]]
-[connection signal="pressed" from="SaveShow3" to="." method="_on_SaveShow_pressed" binds= [ 3 ]]
-[connection signal="pressed" from="LoadShow3" to="." method="_on_LoadShow_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="SaveShow1" to="." method="_on_SaveShow_pressed" binds= [1]]
+[connection signal="pressed" from="LoadShow1" to="." method="_on_LoadShow_pressed" binds= [1]]
+[connection signal="pressed" from="SaveShow2" to="." method="_on_SaveShow_pressed" binds= [2]]
+[connection signal="pressed" from="LoadShow2" to="." method="_on_LoadShow_pressed" binds= [2]]
+[connection signal="pressed" from="SaveShow3" to="." method="_on_SaveShow_pressed" binds= [3]]
+[connection signal="pressed" from="LoadShow3" to="." method="_on_LoadShow_pressed" binds= [3]]
 [connection signal="pressed" from="LoadDemo" to="." method="_on_LoadDemo_pressed"]

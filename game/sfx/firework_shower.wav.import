@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/firework_shower.wav-c126b9dde5402cf6d77b4cacda7f8366.sample"
+type="AudioStreamWAV"
+uid="uid://cwufyhh3hh5k1"
+path="res://.godot/imported/firework_shower.wav-c126b9dde5402cf6d77b4cacda7f8366.sample"
 
 [deps]
 
 source_file="res://sfx/firework_shower.wav"
-dest_files=[ "res://.import/firework_shower.wav-c126b9dde5402cf6d77b4cacda7f8366.sample" ]
+dest_files=["res://.godot/imported/firework_shower.wav-c126b9dde5402cf6d77b4cacda7f8366.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

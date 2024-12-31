@@ -1,11 +1,11 @@
 extends Node2D
 
 
-export var height = 0.5            # 0.0 = min height / 1.0 = max height
-export var color_set = -1          # -1 == random
-export var booster_count = 2       # 2 .. 10
-export var radius_percent = 0.8    # 0.2 = min radius / 1.0 = max radius
-export var lifetime_seconds = 7
+@export var height = 0.5            # 0.0 = min height / 1.0 = max height
+@export var color_set = -1          # -1 == random
+@export var booster_count = 2       # 2 .. 10
+@export var radius_percent = 0.8    # 0.2 = min radius / 1.0 = max radius
+@export var lifetime_seconds = 7
 
 
 var angle = 0
@@ -13,8 +13,8 @@ var speed = 0
 var phase = 1
 
 
-onready var offset = 2 * PI / booster_count
-onready var radius = 150 * radius_percent
+@onready var offset = 2 * PI / booster_count
+@onready var radius = 150 * radius_percent
 
 
 func set_attribute(name, value):

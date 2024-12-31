@@ -1,16 +1,16 @@
 extends Node2D
 
 
-export var color_set = -1          # -1 == random
-export var lifetime_seconds = 10
-export var size_percent = 0.8
+@export var color_set = -1          # -1 == random
+@export var lifetime_seconds = 10
+@export var size_percent = 0.8
 
 
-var target_velocity = 200
+var target_velocity = 200.0
 
 
-onready var particles = $Particles
-onready var audio = $AudioStreamPlayer
+@onready var particles = $Particles
+@onready var audio = $AudioStreamPlayer
 
 
 func set_attribute(name, value):
@@ -23,26 +23,29 @@ func set_attribute(name, value):
 
 
 func _ready():
-	target_velocity = 250 * size_percent
+	target_velocity = 250.0 * size_percent
 	var color_number = color_set if (color_set >= 0 && color_set < 6) else randi() % 6
 	particles.color_ramp = load(str("res://colors/" + str(color_number) + ".tres"))
-	particles.initial_velocity = target_velocity / 10
+	particles.initial_velocity_min = target_velocity
+	particles.initial_velocity_max = target_velocity
 	audio.volume_db = -20
 	audio.play()
 	$Timer.start(lifetime_seconds)
 
 
 func _process(delta):
-	particles.initial_velocity = lerp(particles.initial_velocity, target_velocity, delta)
-	audio.volume_db = particles.initial_velocity / 10 - 20
-	if particles.initial_velocity < 10:
+	var velocity = lerp(particles.initial_velocity_min, target_velocity, delta)
+	particles.initial_velocity_min = velocity
+	particles.initial_velocity_max = velocity
+	audio.volume_db = velocity / 10 - 20
+	if velocity < 10:
 		particles.emitting = false
 		audio.stop()
-	if particles.initial_velocity < 1:
+	if velocity < 1:
 		queue_free()
 
 
 func _on_Timer_timeout():
 	if particles.is_emitting():
-		target_velocity = 0
+		target_velocity = 0.0
 		$Timer.start(particles.lifetime)

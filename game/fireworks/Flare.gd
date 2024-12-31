@@ -1,17 +1,17 @@
 extends Node2D
 
 
-export var color_set = -1          # -1 == random
-export var lifetime_seconds = 10
-export var size_percent = 0.8
+@export var color_set = -1          # -1 == random
+@export var lifetime_seconds = 10
+@export var size_percent = 0.8
 
 
 var number_left = 0
 var last_particle = null
 
 
-onready var particles = $Particles
-onready var audio = $AudioStreamPlayer
+@onready var particles = $Particles
+@onready var audio = $AudioStreamPlayer
 
 
 func set_attribute(name, value):
@@ -27,7 +27,8 @@ func _ready():
 	number_left = lifetime_seconds
 	particles.one_shot = true
 	particles.emitting = false
-	particles.initial_velocity = 250 * size_percent
+	particles.initial_velocity_min = 250 * size_percent
+	particles.initial_velocity_max = 250 * size_percent
 	particles.lifetime = 5 * size_percent
 	spawn_new_particle()
 	$Timer.start()

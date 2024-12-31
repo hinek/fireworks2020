@@ -28,9 +28,9 @@ var orchestration_array = []
 var orchestration_index = 0
 
 
-onready var timer = $Timer
-onready var screen_width = 1280 #get_viewport().size.x
-onready var screen_height = 720 #get_viewport().size.y
+@onready var timer = $Timer
+@onready var screen_width = 1280 #get_viewport().size.x
+@onready var screen_height = 720 #get_viewport().size.y
 
 
 func _ready():
@@ -45,7 +45,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_released("ui_cancel"):
-		get_tree().change_scene("res://SetupScreen.tscn")
+		get_tree().change_scene_to_file("res://SetupScreen.tscn")
 
 
 func _on_Timer_timeout():
@@ -58,13 +58,13 @@ func _on_Timer_timeout():
 
 func continue_random():
 	if randi() % 2 == 0:
-		var newRocket = load("res://fireworks/Rocket.tscn").instance()
-		newRocket.position = Vector2(rand_range(screen_width / 10, screen_width * 9 / 10), screen_height)
+		var newRocket = load("res://fireworks/Rocket.tscn").instantiate()
+		newRocket.position = Vector2(randf_range(screen_width / 10, screen_width * 9 / 10), screen_height)
 		add_child(newRocket)
 	
 	if random_next_fountain_timer == 0:
 		for position in random_fountain_positions[random_fountain_index]:
-			var newFountain = load("res://fireworks/Fountain.tscn").instance()
+			var newFountain = load("res://fireworks/Fountain.tscn").instantiate()
 			newFountain.position = Vector2(position * screen_width, screen_height)
 			newFountain.lifetime_seconds = 6
 			add_child(newFountain)
@@ -93,7 +93,7 @@ func execute_instruction(instruction):
 	
 	if command == "fountain" || command == "rocket" || command == "flare" || command == "wheel":
 		var x = float(result[1])
-		var newFirework = load("res://fireworks/" + command.capitalize() + ".tscn").instance()
+		var newFirework = load("res://fireworks/" + command.capitalize() + ".tscn").instantiate()
 		newFirework.position = Vector2(screen_width * x, screen_height)
 		for i in range(2, result.size()):
 			var set = result[i].split(":")

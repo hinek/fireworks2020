@@ -11,12 +11,12 @@ func _ready():
 func _on_StartOrchestrated_pressed():
 	Settings.current_show = $TextEdit.text
 	Settings.random_mode = false
-	get_tree().change_scene("res://PlayFireworks.tscn")
+	get_tree().change_scene_to_file("res://PlayFireworks.tscn")
 
 
 func _on_StartRandom_pressed():
 	Settings.random_mode = true
-	get_tree().change_scene("res://PlayFireworks.tscn")
+	get_tree().change_scene_to_file("res://PlayFireworks.tscn")
 
 
 func _on_SaveShow_pressed(show_number):

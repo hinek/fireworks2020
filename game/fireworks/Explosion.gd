@@ -1,10 +1,10 @@
 extends Node2D
 
 
-export var color_set = -1 # -1 == random
+@export var color_set = -1 # -1 == random
 
 
-onready var particles = $Particles
+@onready var particles = $Particles
 
 
 func _ready():

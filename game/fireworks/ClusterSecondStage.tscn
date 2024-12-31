@@ -3,4 +3,4 @@
 [node name="ClusterSecondStage" type="RigidBody2D"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( -1, -1, 1, -1, 1, 1, -1, 1 )
+polygon = PackedVector2Array( -1, -1, 1, -1, 1, 1, -1, 1 )
